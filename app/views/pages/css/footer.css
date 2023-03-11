@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.footer {
+	background-color: var(--blue);
+	padding: 30px;
+}
+
+.footer__container {
+	text-align: center;
+}
+
+.footer__paragraph {
+	color: var(--white);
+	padding: 10px;
+}
