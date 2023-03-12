@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.signup__form {
+    padding: 25px;
+}
+
+.signup__button {
+    margin: 10px 0px;
+}
+
+.signup__message--success {
+    color: green;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.signup__message--error {
+    color: red;
+}

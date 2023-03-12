@@ -81,6 +81,23 @@ button:hover {
 	cursor: pointer;
 }
 
+form {
+    border: 5px solid var(--blue);
+    padding: 10px;
+    margin: 20px auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    border: 3px solid var(--blue);
+    padding: 5px;
+    margin: 10px 0px;
+    width: 100%;
+}
+
 .container {
 	max-width: 1024px;
     padding: 10px;

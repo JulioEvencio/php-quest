@@ -12,14 +12,18 @@
 <body>
     <header class="header">
         <div class="header__container container">
-            <a class="logo" href="">PHP Quest</a>
+            <a class="logo" href="./?url=home">PHP Quest</a>
 
             <nav id="navigation" class="navigation">
                 <button id="button-mobile" class="button-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">&#9776;</button>
 
 				<ul class="menu" role="menu">
 					<li class="menu__item">
-                        <a class="menu__link" href="">Home</a>
+                        <a class="menu__link" href="./?url=home">Home</a>
+					</li>
+
+                    <li class="menu__item">
+                        <a class="menu__link" href="./?url=signup">Criar conta</a>
 					</li>
 				</ul>
             </nav>
