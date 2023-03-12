@@ -1,8 +1,10 @@
 -- SOURCE /path/php-quest/database/database.sql
 
--- DROP DATABASE IF EXISTS db_php_quest;
+DROP DATABASE IF EXISTS db_php_quest;
 
--- CREATE DATABASE IF NOT EXISTS db_php_quest;
+CREATE DATABASE IF NOT EXISTS db_php_quest;
+
+USE db_php_quest;
 
 CREATE TABLE IF NOT EXISTS tb_role (
     id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
