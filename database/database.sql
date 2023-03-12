@@ -59,5 +59,4 @@ CREATE TABLE IF NOT EXISTS tb_answer_vote (
     FOREIGN KEY (answer_id) REFERENCES tb_answer (id)
 )ENGINE=InnoDB AUTO_INCREMENT=1;
 
-INSERT INTO tb_role (id, name) VALUES (null, 'user');
 INSERT INTO tb_role (id, name) VALUES (null, 'admin');
