@@ -22,13 +22,29 @@
                         <a class="menu__link" href="./?url=home">Home</a>
 					</li>
 
-                    <li class="menu__item">
-                        <a class="menu__link" href="./?url=login">Entrar</a>
-					</li>
+                    <?php
+                        if (session_status() == PHP_SESSION_NONE) {
+                            session_start();
+                        }
 
-                    <li class="menu__item">
-                        <a class="menu__link" href="./?url=signup">Criar conta</a>
-					</li>
+                        if (isset($_SESSION['user_id'])) {
+                            echo "
+                                <li class=\"menu__item\">
+                                    <a class=\"menu__link\" href=\"./?url=logout\">Sair</a>
+                                </li>
+                            ";
+                        } else {
+                            echo "
+                                <li class=\"menu__item\">
+                                    <a class=\"menu__link\" href=\"./?url=login\">Entrar</a>
+                                </li>
+            
+                                <li class=\"menu__item\">
+                                    <a class=\"menu__link\" href=\"./?url=signup\">Criar conta</a>
+                                </li>
+                            ";
+                        }
+                    ?>
 				</ul>
             </nav>
         </div>
