@@ -17,9 +17,9 @@
             $message = array('message' => 'none');
 
             if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
-                if (!$this->user->findByUsername($_POST['username'])) {
+                if ($this->user->findByUsername($_POST['username']) != null) {
                     $message['message'] = 'failure - username';
-                } else if (!$this->user->findByEmail($_POST['email'])) {
+                } else if ($this->user->findByEmail($_POST['email']) != null) {
                     $message['message'] = 'failure - email';
                 } else if (!$this->user->create($_POST['username'], $_POST['email'], $_POST['password'])) {
                     $message['message'] = 'success';
