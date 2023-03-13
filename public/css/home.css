@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+.button-question {
+    margin: 10px 0px;
+}
+
 .question {
     border: 5px solid var(--blue);
     padding: 10px;
