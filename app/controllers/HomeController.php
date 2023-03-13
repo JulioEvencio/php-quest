@@ -6,15 +6,15 @@
     class HomeController {
 
         private $view;
-        private $questions;
+        private $question;
 
         public function __construct() {
             $this->view = new MainView('home');
-            $this->questions = new QuestionModel();
+            $this->question = new QuestionModel();
         }
 
         public function execute() {
-            $this->view->render($this->questions->findAll());
+            $this->view->render($this->question->findAll());
         }
 
     }
