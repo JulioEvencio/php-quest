@@ -14,7 +14,7 @@
                 }
             ?>
 
-            <form class="question__form" action="./?url=question" method="post">
+            <form class="question__form" action="./question" method="post">
                 <label>
                     Título:<br>
                     <input type="text" name="title" required><br>

@@ -32,7 +32,7 @@
 
                 $this->view->render($message);
             } else {
-                header('Location: ./?url=login');
+                header('Location: ./login');
                 exit;
             }
         }

@@ -3,7 +3,7 @@
 <main>
     <div class="container">
         <h1>Perguntas</h1>
-        <a href="./?url=question"><button class="button-question">Criar uma pergunta</button></a>
+        <a href="./question"><button class="button-question">Criar uma pergunta</button></a>
         <hr>
 
         <?php

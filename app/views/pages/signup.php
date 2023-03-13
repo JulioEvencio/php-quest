@@ -15,7 +15,7 @@
                 }
             ?>
 
-            <form class="signup__form" action="./?url=signup" method="post">
+            <form class="signup__form" action="./signup" method="post">
                 <label>
                     Username:<br>
                     <input type="text" name="username" required><br>

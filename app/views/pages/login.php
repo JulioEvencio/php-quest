@@ -6,7 +6,7 @@
         <hr>
 
         <section class="login">
-            <form class="login__form" action="./?url=login" method="post">
+            <form class="login__form" action="./login" method="post">
                 <label>
                     E-mail:<br>
                     <input type="email" name="email" required><br>

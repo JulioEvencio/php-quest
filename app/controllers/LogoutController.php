@@ -10,7 +10,7 @@
             session_unset();
             session_destroy();
 
-            header('Location: ./?url=login');
+            header('Location: ./login');
             exit;
         }
 
