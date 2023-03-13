@@ -4,6 +4,31 @@
 
     class UserModel {
 
+        public function login($email, $password) {
+            try {
+                $pdo = MySQL::getConnection();
+
+                $sql = "SELECT password FROM tb_user WHERE email = ?";
+
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($email));
+
+                $result = $stmt->fetch();
+
+                if ($result) {
+                    if ($password == $result['password']) {
+                        return false;
+                    }
+                }
+
+                return true;
+            } catch (Exception $e) {
+                return true;
+            } finally {
+                $pdo = null;
+            }
+        }
+
         public function findByUsername($username) {
             try {
                 $pdo = MySQL::getConnection();
@@ -16,12 +41,18 @@
                 $result = $stmt->fetch();
 
                 if ($result) {
-                    return false;
+                    $user = array(
+                        'id' => $result['id'],
+                        'username' => $result['username'],
+                        'email' => $result['email']
+                    );
+
+                    return $user;
                 }
 
-                return true;
+                return null;
             } catch (Exception $e) {
-                return true;
+                return null;
             } finally {
                 $pdo = null;
             }
@@ -39,12 +70,18 @@
                 $result = $stmt->fetch();
 
                 if ($result) {
-                    return false;
+                    $user = array(
+                        'id' => $result['id'],
+                        'username' => $result['username'],
+                        'email' => $result['email']
+                    );
+
+                    return $user;
                 }
 
-                return true;
+                return null;
             } catch (Exception $e) {
-                return true;
+                return null;
             } finally {
                 $pdo = null;
             }

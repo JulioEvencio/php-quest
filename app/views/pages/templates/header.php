@@ -23,6 +23,10 @@
 					</li>
 
                     <li class="menu__item">
+                        <a class="menu__link" href="./?url=login">Entrar</a>
+					</li>
+
+                    <li class="menu__item">
                         <a class="menu__link" href="./?url=signup">Criar conta</a>
 					</li>
 				</ul>
