@@ -16,7 +16,7 @@
                 $result = $stmt->fetch();
 
                 if ($result) {
-                    if ($password == $result['password']) {
+                    if (password_verify($password, $result['password'])) {
                         return false;
                     }
                 }
@@ -91,10 +91,13 @@
             try {
                 $pdo = MySQL::getConnection();
 
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                // $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
                 $sql = "INSERT INTO tb_user (id, username, email, password) VALUES (null, ?, ?, ?)";
 
                 $stmt = $pdo->prepare($sql);
-                $stmt->execute(array($username, $email, $password));
+                $stmt->execute(array($username, $email, $hashed_password));
 
                 return false;
             } catch (Exception $e) {
