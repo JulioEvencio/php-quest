@@ -98,6 +98,15 @@ input {
     width: 100%;
 }
 
+textarea {
+    font-size: 1.5em;
+    border: 3px solid var(--blue);
+    padding: 5px;
+    margin: 10px 0px;
+    width: 100%;
+    resize: none;
+}
+
 .container {
 	max-width: 1024px;
     padding: 10px;

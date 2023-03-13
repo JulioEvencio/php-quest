@@ -29,6 +29,23 @@
             }
         }
 
+        public function create($title, $body, $user_id) {
+            try {
+                $pdo = MySQL::getConnection();
+
+                $sql = "INSERT INTO tb_question (id, title, body, user_id) VALUES (null, ?, ?, ?)";
+
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($title, $body, $user_id));
+
+                return false;
+            } catch (Exception $e) {
+                return true;
+            } finally {
+                $pdo = null;
+            }
+        }
+
     }
 
 ?>

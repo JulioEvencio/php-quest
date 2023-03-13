@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.question__form {
+    padding: 25px;
+    margin: 50px 0px;
+}
+
+.question__button {
+    margin: 10px 0px;
+}
+
+.question__message--error {
+    font-weight: bold;
+    font-size: 2em;
+    color: red;
+}
