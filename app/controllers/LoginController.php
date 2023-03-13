@@ -24,12 +24,13 @@
 
                     if (session_status() == PHP_SESSION_NONE) {
                         session_start();
-
-                        $_SESSION['user_id'] = $user['id'];
-                        $_SESSION['user_username'] = $user['username'];
-                        header('Location: ./');
-                        exit;
                     }
+
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['user_username'] = $user['username'];
+
+                    header('Location: ./');
+                    exit;
                 }
             }
 
