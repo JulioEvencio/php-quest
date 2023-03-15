@@ -17,25 +17,42 @@
         }
 
         public function execute() {
-            if (isset($_POST['question'])) {
-                $question = $this->question->findById($_POST['question']);
-                $answer = $this->answer->findAllByQuestionId($_POST['question']);
+            $message = ['message' => 'none'];
 
-                if ($question != null) {
-                    $message = array(
-                        'message' => 'none',
-                        'question' => $question,
-                        'answers' => $answer
-                    );
-                    $this->view->render($message);
-                } else {
-                    header('Location: ./');
-                    exit;
-                }
-            } else {
+            if (!isset($_POST['question'])) {
                 header('Location: ./');
                 exit;
             }
+
+            $question = $this->question->findById($_POST['question']);
+
+            if ($question == null)  {
+                header('Location: ./');
+                exit;
+            }
+
+            if (isset($_POST['body'])) {
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+
+                if (isset($_SESSION['user_id'])) {
+                    if ($this->answer->create($_POST['body'], $_SESSION['user_id'], $_POST['question'])) {
+                        $message['message'] = 'failure';
+                    } else {
+                        $message['message'] = 'success';
+                    }
+                } else {
+                    $message['message'] = 'failure-login';
+                }
+            }
+
+            $answers = $this->answer->findAllByQuestionId($_POST['question']);
+
+            $message['question'] = $question;
+            $message['answers'] = $answers;
+
+            $this->view->render($message);
         }
 
     }

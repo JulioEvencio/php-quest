@@ -3,19 +3,33 @@
 <main>
     <div class="container">
         <?php
-            if ($arr['message'] == 'failure') {
-                echo "
-                    <span class=\"answer__message--error\">Erro ao enviar resposta!</span><br><br>
-                ";
-            }
-        ?>
 
-        <?php
+            switch ($arr['message']) {
+                case 'failure-login':
+                    echo "
+                        <span class=\"answer__message--error\">Você precisa fazer o login para enviar uma resposta!</span><br><br>
+                    ";
+                    break;
+
+                case 'success':
+                    echo "
+                        <span class=\"answer__message--success\">Resposta adicionada!</span><br><br>
+                    ";
+                    break;
+
+                case 'failure':
+                    echo "
+                        <span class=\"answer__message--error\">Erro ao enviar resposta!</span><br><br>
+                    ";
+                    break;
+            }
+
             echo "
                 <h1>".$arr['question']['title']."</h1>
                 <hr>
                 <p class=\"question__body\">".$arr['question']['body']."</p>
             ";
+
         ?>
 
         <section class="responses">
@@ -37,6 +51,10 @@
             ?>
 
             <form class="responses__form" action="./Questionview" method="post">
+                <?php
+                    echo "<input type=\"text\" name=\"question\" value=".$arr['question']['id']." hidden>";
+                ?>
+
                 <label>
                     Responda:<br>
                     <textarea name="body" rows="10" required></textarea><br>
