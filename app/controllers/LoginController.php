@@ -29,6 +29,8 @@
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['user_username'] = $user['username'];
 
+                    // session_write_close();
+
                     header('Location: ./');
                     exit;
                 }
