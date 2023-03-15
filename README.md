@@ -1,5 +1,34 @@
 # php-quest
-Um site de perguntas e respostas
+Um site de perguntas e respostas feito em PHP puro usando o padrão MVC
+
+## Rotas
+```
+/php-quest/
+```
+
+```
+/php-quest/home
+```
+
+```
+/php-quest/login
+```
+
+```
+/php-quest/logout
+```
+
+```
+/php-quest/signup
+```
+
+```
+/php-quest/question
+```
+
+```
+/php-quest/questionview
+```
 
 ## Banco de dados
 
