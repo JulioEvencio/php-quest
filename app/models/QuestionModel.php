@@ -4,6 +4,36 @@
 
     class QuestionModel {
 
+        public function findById($id) {
+            try {
+                $pdo = MySQL::getConnection();
+
+                $sql = "SELECT * FROM tb_question WHERE id = ?";
+
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($id));
+
+                $result = $stmt->fetch();
+
+                if ($result) {
+                    $question = array(
+                        'id' => $result['id'],
+                        'title' => $result['title'],
+                        'body' => $result['body'],
+                        'user_id' => $result['user_id']
+                    );
+
+                    return $question;
+                }
+
+                return null;
+            } catch (Exception $e) {
+                return null;
+            } finally {
+                $pdo = null;
+            }
+        }
+
         public function findAll() {
             try {
                 $pdo = MySQL::getConnection();

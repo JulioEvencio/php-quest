@@ -6,19 +6,22 @@
         <a href="./question"><button class="button-question">Criar uma pergunta</button></a>
         <hr>
 
+        <section class="question">
         <?php
 
             foreach ($arr as $question) {
                 echo "
-                    <section class=\"question\">
-                        <h2>".$question['title']."</h2>
-                        <hr>
+                    <form class=\"question__form\" action=\"./Questionview\" method=\"post\">
+                        <input type=\"text\" name=\"question\" value=".$question['id']." hidden>
+                            <h2>".$question['title']."</h2>
+                            <hr>
 
-                        <a href=\"".$question['id']."\"><button>Responder</button></a>
-                    </section>
+                            <button type=\"submit\">Responder</button>
+                    </form>
                 ";
             }
 
         ?>
+        </section>
     </div>
 </main>
