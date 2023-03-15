@@ -11,7 +11,7 @@
 
             foreach ($arr as $question) {
                 echo "
-                    <form class=\"question__form\" action=\"./Questionview\" method=\"post\">
+                    <form class=\"question__form\" action=\"./questionview\" method=\"post\">
                         <input type=\"text\" name=\"question\" value=".$question['id']." hidden>
                             <h2>".$question['title']."</h2>
                             <hr>
