@@ -30,6 +30,10 @@
                         if (isset($_SESSION['user_id'])) {
                             echo "
                                 <li class=\"menu__item\">
+                                    <a class=\"menu__link\" href=\"./user\">Perfil</a>
+                                </li>
+
+                                <li class=\"menu__item\">
                                     <a class=\"menu__link\" href=\"./logout\">Sair</a>
                                 </li>
                             ";
