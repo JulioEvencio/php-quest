@@ -8,7 +8,7 @@
             try {
                 $pdo = MySQL::getConnection();
 
-                $sql = "SELECT * FROM tb_answer WHERE question_id = ? ORDER BY id DESC";
+                $sql = "SELECT tb_answer.id as id, tb_answer.body as body, tb_user.username as username FROM tb_answer, tb_user WHERE tb_answer.question_id = ? AND tb_answer.user_id = tb_user.id ORDER BY tb_answer.id ASC";
 
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array($id));
@@ -18,7 +18,7 @@
                 $answers = [];
 
                 foreach ($result as $key => $value) {
-                    $answers[] = array('body' => $value['body']);
+                    $answers[] = array('body' => $value['body'], 'user' => $value['username']);
                 }
 
                 return $answers;

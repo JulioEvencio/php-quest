@@ -8,7 +8,7 @@
             try {
                 $pdo = MySQL::getConnection();
 
-                $sql = "SELECT * FROM tb_question WHERE id = ?";
+                $sql = "SELECT tb_question.id as id, tb_question.title as title, tb_question.body as body, tb_user.username as username FROM tb_question, tb_user WHERE tb_question.id = ?  AND tb_question.user_id = tb_user.id";
 
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array($id));
@@ -20,7 +20,7 @@
                         'id' => $result['id'],
                         'title' => $result['title'],
                         'body' => $result['body'],
-                        'user_id' => $result['user_id']
+                        'user_username' => $result['username']
                     );
 
                     return $question;
@@ -38,7 +38,7 @@
             try {
                 $pdo = MySQL::getConnection();
 
-                $sql = "SELECT * FROM tb_question ORDER BY id DESC LIMIT 10";
+                $sql = "SELECT tb_question.id as id, tb_question.title as title, tb_question.body as body, tb_user.username as username FROM tb_question, tb_user where tb_question.user_id = tb_user.id ORDER BY tb_question.id DESC LIMIT 10";
 
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
@@ -48,7 +48,7 @@
                 $questions = [];
 
                 foreach ($result as $key => $value) {
-                    $questions[] = array('title' => $value['title'], 'id' => $value['id']);
+                    $questions[] = array('title' => $value['title'], 'id' => $value['id'], 'user' => $value['username']);
                 }
 
                 return $questions;

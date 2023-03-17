@@ -15,6 +15,7 @@
                         <input type=\"text\" name=\"question\" value=".$question['id']." hidden>
                             <h2>".$question['title']."</h2>
                             <hr>
+                            <p class=\"question__paragraph\"><strong>Autor:</strong> ".$question['user']."</p>
 
                             <button type=\"submit\">Responder</button>
                     </form>

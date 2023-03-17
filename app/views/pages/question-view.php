@@ -26,6 +26,8 @@
 
             echo "
                 <h1>".$arr['question']['title']."</h1>
+                <br>
+                <p><strong>Autor:</strong> ".$arr['question']['user_username']."</p>
                 <hr>
                 <p class=\"question__body\">".$arr['question']['body']."</p>
             ";
@@ -41,6 +43,8 @@
                 foreach ($arr['answers'] as $answer) {
                     echo "
                         <div class=\"responses__answer\">
+                            <p class=\"answer__paragraph\"><strong>Autor:</strong> ".$answer['user']."</p>
+                            <hr>
                             <p>
                                 ".$answer['body']."
                             </p>
