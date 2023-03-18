@@ -20,14 +20,14 @@
             $message = ['message' => 'none'];
 
             if (!isset($_POST['question'])) {
-                header('Location: ./');
+                header('Location: /php-quest/');
                 exit;
             }
 
             $question = $this->question->findById($_POST['question']);
 
             if ($question == null)  {
-                header('Location: ./');
+                header('Location: /php-quest/');
                 exit;
             }
 

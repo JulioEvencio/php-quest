@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./public/css/question-create.css">
+<link rel="stylesheet" href="/php-quest/public/css/question-create.css">
 
 <main>
     <div class="container">
@@ -14,7 +14,7 @@
                 }
             ?>
 
-            <form class="question__form" action="./question" method="post">
+            <form class="question__form" action="/php-quest/question" method="post">
                 <label>
                     Título:<br>
                     <input type="text" name="title" required><br>

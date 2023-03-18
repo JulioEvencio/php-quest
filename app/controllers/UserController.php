@@ -19,7 +19,7 @@
             }
 
             if (!isset($_SESSION['user_id']))  {
-                header('Location: ./login');
+                header('Location: /php-quest/login');
                 exit;
             }
 

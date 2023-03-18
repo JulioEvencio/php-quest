@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./public/css/login.css">
+<link rel="stylesheet" href="/php-quest/public/css/login.css">
 
 <main>
     <div class="container">
@@ -6,7 +6,7 @@
         <hr>
 
         <section class="login">
-            <form class="login__form" action="./login" method="post">
+            <form class="login__form" action="/php-quest/login" method="post">
                 <label>
                     E-mail:<br>
                     <input type="email" name="email" required><br>

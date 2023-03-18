@@ -25,14 +25,14 @@
                     if ($this->question->create($_POST['title'], $_POST['body'], $_SESSION['user_id'])) {
                         $message['message'] = 'failure';
                     } else {
-                        header('Location: ./');
+                        header('Location: /php-quest/');
                         exit;
                     }
                 }
 
                 $this->view->render($message);
             } else {
-                header('Location: ./login');
+                header('Location: /php-quest/login');
                 exit;
             }
         }

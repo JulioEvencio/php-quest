@@ -31,7 +31,7 @@
 
                     // session_write_close();
 
-                    header('Location: ./');
+                    header('Location: /php-quest/user');
                     exit;
                 }
             }
