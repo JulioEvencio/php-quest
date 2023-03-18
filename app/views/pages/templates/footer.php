@@ -6,6 +6,6 @@
         </div>
     </footer>
 
-    <script src="/php-quest/public/js/script.js"></script>
+    <script src="<?php echo JS_SCRIPT ?>"></script>
 </body>
 </html>

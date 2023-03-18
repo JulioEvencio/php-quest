@@ -9,7 +9,7 @@
         private $user;
 
         public function __construct() {
-            $this->view = new MainView('signup');
+            $this->view = new MainView(PAGE_SIGNUP);
             $this->user = new UserModel();
         }
 

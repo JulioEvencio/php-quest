@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/php-quest/public/css/question-view.css">
+<link rel="stylesheet" href="<?php echo CSS_QUESTION_VIEW ?>">
 
 <main>
     <div class="container">
@@ -54,7 +54,7 @@
 
             ?>
 
-            <form class="responses__form" action="/php-quest/Questionview" method="post">
+            <form class="responses__form" action="<?php echo URL_QUESTIONVIEW ?>" method="post">
                 <?php
                     echo "<input type=\"text\" name=\"question\" value=".$arr['question']['id']." hidden>";
                 ?>

@@ -11,7 +11,7 @@
         private $answer;
 
         public function __construct() {
-            $this->view = new MainView('question-view');
+            $this->view = new MainView(PAGE_QUESTION_VIEW);
             $this->question = new QuestionModel();
             $this->answer = new AnswerModel();
         }
@@ -20,14 +20,14 @@
             $message = ['message' => 'none'];
 
             if (!isset($_POST['question'])) {
-                header('Location: /php-quest/');
+                header('Location: ' . URL_HOME);
                 exit;
             }
 
             $question = $this->question->findById($_POST['question']);
 
             if ($question == null)  {
-                header('Location: /php-quest/');
+                header('Location: ' . URL_HOME);
                 exit;
             }
 

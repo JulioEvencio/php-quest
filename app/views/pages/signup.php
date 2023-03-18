@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/php-quest/public/css/signup.css">
+<link rel="stylesheet" href="<?php echo CSS_SIGNUP ?>">
 
 <main>
     <div class="container">
@@ -15,7 +15,7 @@
                 }
             ?>
 
-            <form class="signup__form" action="/php-quest/signup" method="post">
+            <form class="signup__form" action="<?php echo URL_SIGNUP ?>" method="post">
                 <label>
                     Username:<br>
                     <input type="text" name="username" required><br>

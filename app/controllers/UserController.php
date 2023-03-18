@@ -9,7 +9,7 @@
         private $question;
 
         public function __construct() {
-            $this->view = new MainView('user');
+            $this->view = new MainView(PAGE_USER);
             $this->question = new QuestionModel();
         }
 
@@ -19,7 +19,7 @@
             }
 
             if (!isset($_SESSION['user_id']))  {
-                header('Location: /php-quest/login');
+                header('Location: ' . URL_LOGIN);
                 exit;
             }
 

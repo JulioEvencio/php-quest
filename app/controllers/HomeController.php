@@ -9,7 +9,7 @@
         private $question;
 
         public function __construct() {
-            $this->view = new MainView('home');
+            $this->view = new MainView(PAGE_HOME);
             $this->question = new QuestionModel();
         }
 

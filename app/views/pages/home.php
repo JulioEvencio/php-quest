@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="/php-quest/public/css/home.css">
+<link rel="stylesheet" href="<?php echo CSS_HOME ?>">
 
 <main>
     <div class="container">
         <h1>Perguntas</h1>
-        <a href="/php-quest/question"><button class="button-question">Criar uma pergunta</button></a>
+        <a href="<?php echo URL_QUESTION ?>"><button class="button-question">Criar uma pergunta</button></a>
         <hr>
 
         <section class="question">
@@ -11,7 +11,7 @@
 
             foreach ($arr as $question) {
                 echo "
-                    <form class=\"question__form\" action=\"/php-quest/questionview\" method=\"post\">
+                    <form class=\"question__form\" action=\"".URL_QUESTIONVIEW."\" method=\"post\">
                         <input type=\"text\" name=\"question\" value=".$question['id']." hidden>
                             <h2>".$question['title']."</h2>
                             <hr>

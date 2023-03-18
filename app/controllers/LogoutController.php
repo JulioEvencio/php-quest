@@ -10,7 +10,7 @@
             session_unset();
             session_destroy();
 
-            header('Location: /php-quest/login');
+            header('Location: ' . URL_LOGIN);
             exit;
         }
 

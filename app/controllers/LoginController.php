@@ -9,7 +9,7 @@
         private $user;
 
         public function __construct() {
-            $this->view = new MainView('login');
+            $this->view = new MainView(PAGE_LOGIN);
             $this->user = new UserModel();
         }
 
@@ -31,7 +31,7 @@
 
                     // session_write_close();
 
-                    header('Location: /php-quest/user');
+                    header('Location: ' . URL_USER);
                     exit;
                 }
             }

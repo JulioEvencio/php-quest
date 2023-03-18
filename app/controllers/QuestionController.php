@@ -9,7 +9,7 @@
         private $question;
 
         public function __construct() {
-            $this->view = new MainView('question-create');
+            $this->view = new MainView(PAGE_QUESTION_CREATE);
             $this->question = new QuestionModel();
         }
 
@@ -25,14 +25,14 @@
                     if ($this->question->create($_POST['title'], $_POST['body'], $_SESSION['user_id'])) {
                         $message['message'] = 'failure';
                     } else {
-                        header('Location: /php-quest/');
+                        header('Location: ' . URL_HOME);
                         exit;
                     }
                 }
 
                 $this->view->render($message);
             } else {
-                header('Location: /php-quest/login');
+                header('Location: ' . URL_LOGIN);
                 exit;
             }
         }
