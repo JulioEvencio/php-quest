@@ -6,8 +6,8 @@
     const URL_LOGIN = BASE_URL . 'login/';
     const URL_LOGOUT = BASE_URL . 'logout/';
     const URL_SIGNUP = BASE_URL . 'signup/';
-    const URL_QUESTION = BASE_URL . 'question/';
-    const URL_QUESTIONVIEW = BASE_URL . 'questionview/';
+    const URL_QUESTION_CREATE = BASE_URL . 'question/create/';
+    const URL_QUESTION_VIEW = BASE_URL . 'question/view/';
     const URL_USER = BASE_URL . 'user/';
 
     const PAGE_TEMPLATES_HEADER = './app/views/pages/templates/header.php';

@@ -3,7 +3,7 @@
 <main>
     <div class="container">
         <h1>Perguntas</h1>
-        <a href="<?php echo URL_QUESTION ?>"><button class="button-question">Criar uma pergunta</button></a>
+        <a href="<?php echo URL_QUESTION_CREATE ?>"><button class="button-question">Criar uma pergunta</button></a>
         <hr>
 
         <section class="question">
@@ -11,7 +11,7 @@
 
             foreach ($arr as $question) {
                 echo "
-                    <form class=\"question__form\" action=\"".URL_QUESTIONVIEW."\" method=\"post\">
+                    <form class=\"question__form\" action=\"".URL_QUESTION_VIEW."\" method=\"post\">
                         <input type=\"text\" name=\"question\" value=".$question['id']." hidden>
                             <h2>".$question['title']."</h2>
                             <hr>

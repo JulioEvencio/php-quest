@@ -14,7 +14,7 @@
                 }
             ?>
 
-            <form class="question__form" action="<?php echo URL_QUESTION ?>" method="post">
+            <form class="question__form" action="<?php echo URL_QUESTION_CREATE ?>" method="post">
                 <label>
                     Título:<br>
                     <input type="text" name="title" required><br>

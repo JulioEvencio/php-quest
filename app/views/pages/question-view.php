@@ -54,7 +54,7 @@
 
             ?>
 
-            <form class="responses__form" action="<?php echo URL_QUESTIONVIEW ?>" method="post">
+            <form class="responses__form" action="<?php echo URL_QUESTION_VIEW ?>" method="post">
                 <?php
                     echo "<input type=\"text\" name=\"question\" value=".$arr['question']['id']." hidden>";
                 ?>
